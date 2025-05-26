@@ -1,75 +1,54 @@
-# Nuxt Minimal Starter
+#  Sistema de Compras de Productos (Maiz)🌽🌽🌽
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Este proyecto es una aplicación web desarrollada con **Vue 3**, **Pinia** y **Prisma**, que permite a los usuarios (clientes) visualizar productos disponibles (como pipocas), realizar compras, y gestionar dichas compras de forma dinámica e interactiva.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 🚀 Tecnologías utilizadas
 
+- **Vue 3 + Vite** – Framework moderno para frontend.
+- **Pinia** – Manejo de estado de forma simple y modular.
+- **Prisma** – ORM para el manejo de base de datos con migraciones y relaciones.
+- **Tailwind CSS** – Estilos rápidos, responsivos y personalizables.
+- **TypeScript** – Tipado estático para mayor robustez.
+
+---
+
+## ⚙️ Funcionalidades
+
+- ✅ Registro de cliente.
+- ✅ Visualización de productos activos.
+- ✅ Compra de productos (limitada a una compra por minuto por cliente-producto).
+- ✅ Alerta visual de compra exitosa o error.
+- ✅ Imagen en base64 para productos.
+- ✅ Contador regresivo antes de poder volver a comprar el mismo producto.
+- ✅ Pantalla administrativa que agrupa compras por producto.
+- ✅ Sistema de rutas con protección básica según estado del cliente.
+
+---
+
+## 🏁 Iniciar el proyecto localmente
+
+1. Clona el repositorio
+   
+2. Instala dependencias:
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+3. Configura tu base de datos (PostgreSQL, MySQL o SQLite):
 ```bash
-# npm
+npx prisma migrate dev --name init
+```
+4. Inicia el proyecto:
+```bash
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+## Analisis del proyecto
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+https://drive.google.com/file/d/1BiNWJwz3MN3Ig7iK00jO19p8vG4Q3C8u/view?usp=sharing
 ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+¡Gracias por usar este proyecto!
+¡Disfruta comprando maíz y que tengas una experiencia increíble! 🌽🚀
