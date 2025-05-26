@@ -1,0 +1,22 @@
+-- CreateTable
+CREATE TABLE "Cliente" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- CreateTable
+CREATE TABLE "Pipoca" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "name" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Compra" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "clientId" TEXT NOT NULL,
+    "pipocaId" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Compra_clientId_fkey" FOREIGN KEY ("clientId") REFERENCES "Cliente" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Compra_pipocaId_fkey" FOREIGN KEY ("pipocaId") REFERENCES "Pipoca" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

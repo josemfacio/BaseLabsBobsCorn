@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+
+model Cliente {
+  id        String    @id @default(uuid())
+  name      String
+  createdAt   DateTime  @default(now())
+  compras   Compra[]
+}
+
+model Producto {
+  id        String    @id @default(uuid())
+  name      String
+  img       String?   // base64 opcional
+  activo    Boolean   @default(true)
+  compras   Compra[]
+}
+
+model Compra {
+  id          String    @id @default(uuid())
+  clienteId   String?
+  productoId  String?
+  createdAt   DateTime  @default(now())
+
+  cliente     Cliente?   @relation(fields: [clienteId], references: [id])
+  producto    Producto?  @relation(fields: [productoId], references: [id])
+
+  @@index([clienteId])
+  @@index([productoId])
+}
